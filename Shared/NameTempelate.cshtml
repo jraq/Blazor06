@@ -1,0 +1,16 @@
+<h1>Name</h1>
+
+@if (name != null)
+{
+    @NameTemplate(name)
+
+}
+else
+{
+    <h2>Looking for name...</h2>
+}
+
+@functions {
+[Parameter] protected Person name { get; set; }
+[Parameter] protected RenderFragment<Person> NameTemplate { get; set; }
+}

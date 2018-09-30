@@ -1,0 +1,20 @@
+@page "/person"
+
+<NameTempelate Name="personHello">
+    <NameTemplate Context="person">
+        <div>
+            <h1>@person.Name</h1>
+        </div>
+    </NameTemplate>
+</NameTempelate>
+
+
+@functions {
+    protected Person personHello = new Person();
+
+    protected override async Task OnInitAsync()
+    {
+        personHello = new Person();
+        personHello.Name = "Test";
+    }
+}
